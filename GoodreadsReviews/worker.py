@@ -214,17 +214,6 @@ class Worker(Thread): # Get details
 
         try:
             print(root)
-            print('jsavargas', flush=True)
-            print('jsavargas', flush=True)
-            print('jsavargas', flush=True)
-            print('jsavargas', flush=True)
-            print('jsavargas', flush=True)
-            print('jsavargas', flush=True)
-            print('jsavargas', flush=True)
-            print('jsavargas', flush=True)
-            print('jsavargas', flush=True)
-            print('jsavargas', flush=True)
-            print('jsavargas', flush=True)
 
             ## calibre-customize -b .
             mi.publisher, mi.pubdate = self.parse_publisher_and_date(root)
