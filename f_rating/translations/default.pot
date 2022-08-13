@@ -1,0 +1,71 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-08-06 16:00-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ui.py:37
+msgid "Run F_rating to set decimal rating"
+msgstr ""
+
+#: ui.py:53
+msgid "Column checked"
+msgstr ""
+
+#: ui.py:54
+msgid "Column exists already"
+msgstr ""
+
+#: ui.py:70
+msgid "Column created"
+msgstr ""
+
+#: ui.py:71
+msgid ""
+"A custom column is created. restart Calibre to continue\n"
+" If the column is not created you have to do it manual"
+msgstr ""
+
+#: ui.py:86
+msgid "searching .."
+msgstr ""
+
+#: ui.py:133
+msgid "Database Update"
+msgstr ""
+
+#: ui.py:134
+#, python-format
+msgid ""
+"Finished extracting rating from publisherfield \n"
+"- for a total of %d books"
+msgstr ""
+
+#: ui.py:165
+msgid "Set decimal rating"
+msgstr ""
+
+#: ui.py:165
+msgid "Search end set database for decimal_ratings"
+msgstr ""
+
+#: ui.py:166
+msgid "Check and create custom column"
+msgstr ""
+
+#: ui.py:166
+msgid " Create custom column"
+msgstr ""

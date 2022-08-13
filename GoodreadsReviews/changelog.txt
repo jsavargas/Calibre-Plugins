@@ -1,0 +1,119 @@
+[B]Version 1.5.3[/B] - 05 January 2022
+Change: Cleanup in preparation for calibre 6/Qt6.
+
+[B]Version 1.5.2[/B] - 30 November 2020 - made by davidfor
+Fix: Use mobi-asin identifier 
+
+[B]Version 1.5.1[/B] - 25 September 2020 - made by davidfor
+Fix: Wasn't getting the series info.
+New: Czech translation - thanks to seeder
+New: Add download page count from databazeknih.cz and cbdb.cz - thanks to seeder
+
+[B]Version 1.5.0[/B] - 19 September 2020 - made by davidfor
+Update: Changes for Python 3 support in calibre.
+Fix: Small error in handling editions.
+
+[B]Version 1.4.0[B] - 20 Dec 2018 - made by davidfor
+Fix: Site change for rating.
+Fix: Add extra attempt to convert language name to code.
+
+[B]Version 1.3.0[B] - 10 Nov 2018 - made by davidfor
+New: Add get_book_url for pasting URL and getting an identifier
+Change: Generate HTTPS URL for identifier.
+
+[B]Version 1.2.0[B] - 23 Oct 2018 - made by davidfor
+New: Add search by ASIN or other Amazon id if it exists.
+New: Use auto_complete API for ISBN and ASIN search. Based on code from MR user botmtl. 
+
+[B]Version 1.1.17[B] - 13 Oct 2018 - made by davidfor
+Fix: Changes in search page plus fixing issue with scanning editions.
+
+[B]Version 1.1.16[B] - 03 Oct 2018 - made by davidfor
+Update: Checks through the search results for a match to the title and author. This will solve the problem reported by @saitoh183.
+New: Get the ASIN if the book is am Amazon edition. There is an option to turn this on. It is off by default. This is based on code from @Iceybones.
+Fix: Series separated from the title.
+
+[B]Version 1.1.14[B] - 17 Apr 2018 - made by davidfor
+Fix: Change in search page.
+
+[B]Version 1.1.13[/B] - 17 Dec 2017 - made by davidfor
+Fix: Normalize title to solve issues with accented characters.
+
+[B]Version 1.1.12[/B] - 30 Dec 2016 - made by davidfor
+Ratings were not always being retrieved properly.
+
+[B]Version 1.1.11[/B] - 8 Feb 2016 - made by davidfor
+Site changes for the description/comments.
+Site and option changes for genre and classification. 
+
+[B]Version 1.1.10[B] - 26 Oct 2015
+Site changes for the description/comments.
+
+[B]Version 1.1.9[/B] - 11 Jul 2015
+Do not change case of tags downloaded, so YA stays as YA.
+
+[B]Version 1.1.8[/B] - 08 Jul 2014
+Change to allow Qt4 or Qt5.
+
+[B]Version 1.1.7[/B] - 25 Aug 2013
+Another fix for more.../less... on authors
+
+[B]Version 1.1.6[/B] - 17 Aug 2013
+Support Dutch language
+
+[B]Version 1.1.5[/B] - 10 Jul 2013
+Updated to match Goodreads website change which broke ISBB and cover parsing
+
+[B]Version 1.1.4[/B] - 04 Mar 2013
+Fix for Goodreads change for when large number of authors to ensure more.../less... is removed correctly
+
+[B]Version 1.1.3[/B] - 28 Dec 2012
+Fix "Get all contributing authors" option
+Add support for "languages" metadata field
+
+[B]Version 1.1.2[/B] - 23 Jun 2012
+Reject editions that do not match in title (such as different languages) and handle non-ascii characters better
+Fix to handle books with short descriptions since Goodreads website change
+
+[B]Version 1.1.1[/B] - 12 Jun 2012
+Updated to match Goodreads website change which stopped tags being downloaded
+Change to the comments to no longer strip paragraph breaks
+
+[B]Version 1.1.0[/B] - 03 Mar 2012
+Fix the "Scan multiple editions for title/author searches" option broken from Goodreads website change
+
+[B]Version 1.0.9[/B] - 14 Nov 2011
+Support case insensitive comparisons of genre tag mappings
+Allow renaming an item changing only case
+When sorting to display the mappings in the config screen, ignore case
+
+[B]Version 1.0.8[/B] - 25 Oct 2011
+If large number of authors, ensure more... and ...less is stripped from authors results.
+
+[B]Version 1.0.7[/B] - 10 Aug 2011
+Ensure a "close but not quite" series # does not throw an error within the plugin.
+
+[B]Version 1.0.6[/B] - 21 Jun 2011
+Handle change to Goodreads website which prevented title/author results returning
+
+[B]Version 1.0.5[/B] - 12 May 2011
+Ensure any covers less than 1000 bytes in size are ignored.
+No longer prefix the comments with SUMMARY: in output for consistency with other plugins
+
+[B]Version 1.0.4[/B] - 08 May 2011
+Remove code supporting versions prior to 0.8
+Strip trailing comma from series name if it exists
+Put summary comments on line following the word SUMMARY: rather than on same line.
+
+[B]Version 1.0.3[/B] - 29 Apr 2011
+Fix to ensure non ascii author names are parsed correctly.
+
+[B]Version 1.0.2[/B] - 26 Apr 2011
+Properly fix the ordering of tags.
+
+[B]Version 1.0.1[/B] - 25 Apr 2011
+Ensure tags mapped are returned by order of popularity not alphabetically so applying a tag threshold works better
+Add support for API change upcoming in Calibre 0.7.58 allowing hyperlinked ids in book details panel
+
+[B]Version 1.0[/B] - 23 Apr 2011
+Initial release of plugin, rewritten consolidation of Goodreads Metadata and Goodreads Covers plugins

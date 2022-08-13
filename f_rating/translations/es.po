@@ -1,0 +1,76 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-08-06 16:00-0300\n"
+"PO-Revision-Date: 2022-08-06 16:04-0300\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: es\n"
+
+#: ui.py:37
+msgid "Run F_rating to set decimal rating"
+msgstr "Ejecute F_rating para establecer una calificación decimal y contar las reseñas"
+
+#: ui.py:53
+msgid "Column checked"
+msgstr "Columna verificada"
+
+#: ui.py:54
+msgid "Column exists already"
+msgstr "La columna ya existe"
+
+#: ui.py:70
+msgid "Column created"
+msgstr "Columna creada"
+
+#: ui.py:71
+msgid ""
+"A custom column is created. restart Calibre to continue\n"
+" If the column is not created you have to do it manual"
+msgstr ""
+"Se crea una columna personalizada. reinicie Calibre para continuar\n"
+"  Si no se crea la columna hay que hacerlo manual"
+
+#: ui.py:86
+msgid "searching .."
+msgstr "buscando .."
+
+#: ui.py:133
+msgid "Database Update"
+msgstr "Base de datos actualizada"
+
+#: ui.py:134
+#, python-format
+msgid ""
+"Finished extracting rating from publisherfield \n"
+"- for a total of %d books"
+msgstr ""
+"Terminado de extraer la calificación y las reseñas para el campo Editor\n"
+"- por un total de %d libros"
+
+#: ui.py:165
+msgid "Set decimal rating"
+msgstr "Establecer calificación decimal"
+
+#: ui.py:165
+msgid "Search end set database for decimal_ratings"
+msgstr "Buscar en la base de datos del conjunto final para calificación_decimal"
+
+#: ui.py:166
+msgid "Check and create custom column"
+msgstr "Comprobar y crear una columna personalizada"
+
+#: ui.py:166
+msgid " Create custom column"
+msgstr " Comprobar y crear una columna personalizada"

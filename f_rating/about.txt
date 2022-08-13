@@ -1,0 +1,19 @@
+The floating rating Demo
+===========================
+
+Created by Pr.Barnart
+
+Requires calibre >= 3.0.1
+
+
+
+version 3.0.0
+use of menu and direct click to run set decimal rating
+version 3.0.1
+seperator #PrB.rating#
+version 3.1.0
+adjust to python 3.X and 2.7
+version 3.2.0
+fix bug with those stupid diacritics,for 3.x as well as 2.7 
+
+
