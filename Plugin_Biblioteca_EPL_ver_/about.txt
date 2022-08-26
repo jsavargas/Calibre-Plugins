@@ -1,0 +1,6 @@
+Biblioteca ePL
+===========================
+
+Creado por lgonzalezp
+Requires calibre >= 3.0
+
