@@ -10,6 +10,11 @@ import os
 import subprocess
 import re
 import time
+import os.path as pt
+import urllib
+import html
+
+
 from calibre_plugins.biblioteca_EPL.config import prefs
 from calibre.ebooks.metadata.meta import get_metadata
 
@@ -555,6 +560,72 @@ class Principal(QDialog):
             self.anadidos = 0
             self.termina()
 
+
+    def magnet2torrent(self, magnet, output_name=None):
+        try:
+
+            print(" 1 magnet2torrent magnet2torrent magnet2torrent")
+            print(f" 2 magnet2torren [{magnet}] \n[{output_name}]")
+
+            #Convert HTML special characters to escaped normal characters
+            #magnetLink = 'magnet:?xt=urn:btih:b54a3ba68fd398ed019e21290beecc9dda64a858&dn=wikipedia_en_all_novid_2018-06.zim&tr=udp%3a%2f%2ftracker.mg64.net'
+
+            #Convert HTML special characters to escaped normal characters
+            magnetLink_aux = urllib.parse.quote(magnet)
+            magnetLink = magnetLink_aux
+
+            print("type >>> ",type(magnetLink))
+            print(" 3 magnet2torrent magnet2torrent magnet2torrent")
+            magnetLink = urllib.parse.unquote(html.unescape(magnetLink))
+            print(" 4 magnet2torrent magnet2torrent magnet2torrent")
+
+            #Split out the trackers from the magnet link and save for later
+            magnetsplit = magnetLink.split("&tr=")
+            print(f" 4.1 magnet2torrent [{magnetLink}]")
+            print(f' 4.2 magnet2torrent LEN [{len(magnetLink.split("&tr="))}]')
+            print(f" 4.3 magnet2torrent [{magnetsplit}]")
+            print(f" 4.4 magnet2torrent [{magnetsplit[0]}]")
+            base = magnetsplit[0]
+            magnetTrackers = magnetsplit[1::]
+            print(" 5 magnet2torrent magnet2torrent magnet2torrent")
+            print(" 6 magnet2torrent magnet2torrent magnet2torrent")
+            print(f" 6.1 magnet2torrent [{magnetTrackers}]")
+            trackers = []
+            #Add the trackers from the magnet link to our list of trackers
+            for magnetTracker in magnetTrackers:
+                trackers.append(magnetTracker)
+
+            print(f" 6.2 magnet2torrent [{trackers}]")
+            #Add the trackers
+            magnetLink = base
+            for tracker in trackers:
+                magnetLink += '&tr=' + tracker
+            print(" 7 magnet2torrent magnet2torrent magnet2torrent")
+
+            #Create the torrent file name - it is named after the magnet hash
+            magnetName = magnetLink[magnetLink.find("btih:") + 1:magnetLink.find("&")]
+            magnetName = magnetName.replace('tih:','')
+            torrentfilename = '/watch/meta-' + magnetName + '.torrent'
+            print(" 8 magnet2torrent magnet2torrent magnet2torrent")
+
+            print(f" 8.0 magnet2torrent [{torrentfilename}]")
+            #Write the magnet link to the torrent file
+            with open(torrentfilename, 'w') as o:
+                #linkstr = u'd10:magnet-uri' + str(len(magnetLink)) + u':' + magnetLink + u'e'
+                linkstr = f"d10:magnet-uri{str(len(magnetLink))}:{magnetLink}e"
+                #linkstr = linkstr.encode('utf8')
+                print(f" open  >> [{linkstr}]")
+                o.write(str(linkstr))
+
+            with open("/watch/torrentfilename.txt", 'a') as o:
+                print(f" open  >> [{magnet}]")
+                o.write(f"{str(magnet)}\n")
+
+            return linkstr
+        except Exception as e:
+            print(f" except except except except excep  >> {e}")
+            time.sleep(500)
+
     def descargarNuevos(self):
         self.boton_forzar.hide()
         if Intercambio.actualizarEPL:
@@ -580,15 +651,24 @@ class Principal(QDialog):
                     magnet = 'magnet:?xt=urn:btih:' + torrent + '&dn=EPL_[' + self.limpiar_EPLID(lista[0]) + ']_' + titulo + '&tr=udp://9.rarbg.me:2710/announce&tr=udp://tracker.leechers-paradise.org:6969/announce&tr=udp://tracker.internetwarriors.net:1337/announce&tr=udp://tracker.cyberia.is:6969/announce&tr=udp://exodus.desync.com:6969/announce&tr=udp://explodie.org:6969/announce&tr=http://p4p.arenabg.com:1337/announce&tr=udp://p4p.arenabg.ch:1337/announce&tr=udp://tracker3.itzmx.com:6961/announce&tr=http://tracker1.itzmx.com:8080/announce&tr=udp://tracker.torrent.eu.org:451/announce&tr=udp://open.stealth.si:80/announce&tr=udp://tracker.tiny-vps.com:6969/announce&tr=udp://tracker.ds.is:6969/announce&tr=http://open.acgnxtracker.com:80/announce&tr=udp://tracker.zerobytes.xyz:1337/announce&tr=udp://retracker.lanta-net.ru:2710/announce&tr=udp://open.demonii.si:1337/announce'
                 else:
                     magnet = 'magnet:?xt=urn:btih:' + torrent + '&dn=EPL_[' + self.limpiar_EPLID(lista[0]) + ']_' + titulo + self.cadena_trackers 
-
                 if islinux:
-                    subprocess.Popen(['xdg-open', magnet], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+                    print(f" 1 Añadido [{magnet}]")
+                    self.magnet2torrent(magnet,'/watch')
+                    #subprocess.Popen(['xdg-open', magnet], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+                    self.magnet2torrent(magnet,'/watch')
                 elif iswindows or iscygwin:
-                    os.startfile(magnet)
+                    print(f" 2 Añadido [{magnet}]")
+                    #os.startfile(magnet)
+                    self.magnet2torrent(magnet,'/watch')
                 elif isosx:
-                    subprocess.Popen(['open', magnet], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+                    print(f" 3 Añadido [{magnet}]")
+                    #subprocess.Popen(['open', magnet], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+                    self.magnet2torrent(magnet,'/watch')
                 else:
-                    subprocess.Popen(['xdg-open', magnet], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+                    print(f" 4 Añadido [{magnet}]")
+                    #subprocess.Popen(['xdg-open', magnet], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+                    self.magnet2torrent(magnet,'/watch')
+                print(f" 5 Añadido [{magnet}]")
                 anadidos += 1
                 self.lista_agregados.append(self.limpiar_EPLID(lista[0]))
                 if anadidos == prefs['Limite_descargar']:

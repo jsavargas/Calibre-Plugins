@@ -24,7 +24,7 @@ class InterfaceBibliotecaEPL(InterfaceActionBase):
     description         = 'Mantenimiento de la biblioteca completa de ePubLibre.'
     supported_platforms = ['windows', 'osx', 'linux']
     author              = 'lgonzalezp'
-    version             = (2, 8, 0)
+    version             = (2, 8, 2)
     minimum_calibre_version = (3, 6, 0)
 
     #: This field defines the GUI plugin class that contains all the code
